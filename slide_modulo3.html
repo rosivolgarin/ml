@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+      
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+      }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: linear-gradient(135deg, #0a192f 0%, #000000 100%);
+        color: #ffffff;
+      }
+      
+      .title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #64ffda;
+      }
+      
+      .subtitle {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: #e6f1ff;
+      }
+      
+      .topic-card {
+        background-color: rgba(10, 25, 47, 0.7);
+        border-left: 4px solid #64ffda;
+        transition: transform 0.3s ease;
+      }
+      
+      .topic-card:hover {
+        transform: translateX(5px);
+      }
+      
+      .highlight {
+        color: #ff00ff;
+      }
+      
+      .function-formula {
+        background-color: rgba(100, 255, 218, 0.1);
+        border: 1px solid #64ffda;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container p-12 flex flex-col">
+      <!-- Cabeçalho -->
+      <div class="mb-8">
+        <h1 class="title text-4xl mb-2">Módulo 3 - Funções e Gráficos</h1>
+        <div class="w-24 h-1 bg-cyan-400"></div>
+      </div>
+      
+      <!-- Conteúdo principal em duas colunas -->
+      <div class="flex flex-1">
+        <!-- Coluna da esquerda: Tópicos -->
+        <div class="w-1/2 pr-8">
+          <div class="topic-card p-6 mb-6">
+            <h2 class="subtitle text-2xl mb-3">Funções de Ativação</h2>
+            <p class="mb-2">• Introduzem <span class="highlight">não-linearidade</span> em redes neurais</p>
+            <p class="mb-2">• Sigmoide: comprime valores para [0,1]</p>
+            <p>• ReLU: simplifica cálculos e evita o problema de gradiente desvanecente</p>
+            
+            <div class="flex space-x-4 mt-4">
+              <div class="function-formula p-3 rounded-lg text-center">
+                <p class="text-sm mb-1">Sigmoide</p>
+                <p class="text-cyan-400">σ(x) = 1/(1+e<sup>-x</sup>)</p>
+              </div>
+              <div class="function-formula p-3 rounded-lg text-center">
+                <p class="text-sm mb-1">ReLU</p>
+                <p class="text-cyan-400">f(x) = max(0, x)</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="topic-card p-6 mb-6">
+            <h2 class="subtitle text-2xl mb-3">Funções de Custo</h2>
+            <p class="mb-2">• Quantificam o <span class="highlight">erro</span> do modelo</p>
+            <p class="mb-2">• MSE: para problemas de regressão</p>
+            <p>• Entropia Cruzada: para problemas de classificação</p>
+            
+            <div class="function-formula p-3 rounded-lg text-center mt-4">
+              <p class="text-sm mb-1">Erro Quadrático Médio (MSE)</p>
+              <p class="text-cyan-400">MSE = (1/n) Σ(y<sub>i</sub> - ŷ<sub>i</sub>)<sup>2</sup></p>
+            </div>
+          </div>
+          
+          <div class="topic-card p-6">
+            <h2 class="subtitle text-2xl mb-3">Funções Convexas e Otimização</h2>
+            <p class="mb-2">• Funções convexas garantem <span class="highlight">mínimo global único</span></p>
+            <p class="mb-2">• Facilitam a convergência de algoritmos de otimização</p>
+            <p>• Essenciais para modelos como regressão linear e logística</p>
+          </div>
+        </div>
+        
+        <!-- Coluna da direita: Gráficos -->
+        <div class="w-1/2 flex flex-col">
+          <div class="bg-opacity-20 bg-white p-4 rounded-lg mb-6">
+            <h3 class="subtitle text-xl mb-3 text-center">Comparação: Sigmoide vs ReLU</h3>
+            <div style="height: 300px;">
+              <canvas id="activationFunctions"></canvas>
+            </div>
+          </div>
+          
+          <div class="bg-opacity-20 bg-white p-4 rounded-lg">
+            <h3 class="subtitle text-xl mb-3 text-center">Aplicações em Machine Learning</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-opacity-10 bg-white p-3 rounded-lg">
+                <p class="text-center mb-2 text-cyan-400">Redes Neurais</p>
+                <p class="text-sm text-center">Funções de ativação permitem que redes neurais aprendam padrões complexos e não-lineares nos dados.</p>
+              </div>
+              <div class="bg-opacity-10 bg-white p-3 rounded-lg">
+                <p class="text-center mb-2 text-cyan-400">Otimização</p>
+                <p class="text-sm text-center">Funções de custo guiam o processo de aprendizado, minimizando o erro do modelo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Rodapé com indicador de página -->
+      <div class="mt-8 flex justify-end">
+        <div class="flex items-center space-x-2">
+          <div class="w-3 h-3 rounded-full bg-cyan-400"></div>
+          <span class="text-sm text-gray-400">4/10</span>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Dados para o gráfico de funções de ativação
+      const ctx = document.getElementById('activationFunctions').getContext('2d');
+      
+      // Gerar dados para as funções
+      const xValues = Array.from({length: 100}, (_, i) => -5 + i * 0.1);
+      
+      // Função Sigmoide
+      const sigmoid = x => 1 / (1 + Math.exp(-x));
+      const sigmoidValues = xValues.map(x => sigmoid(x));
+      
+      // Função ReLU
+      const relu = x => Math.max(0, x);
+      const reluValues = xValues.map(x => relu(x));
+      
+      // Criar o gráfico
+      const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              label: 'Sigmoide',
+              data: sigmoidValues,
+              borderColor: '#64ffda',
+              backgroundColor: 'rgba(100, 255, 218, 0.1)',
+              tension: 0.4,
+              pointRadius: 0
+            },
+            {
+              label: 'ReLU',
+              data: reluValues,
+              borderColor: '#ff00ff',
+              backgroundColor: 'rgba(255, 0, 255, 0.1)',
+              tension: 0,
+              pointRadius: 0
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              grid: {
+                color: 'rgba(255, 255, 255, 0.1)'
+              },
+              ticks: {
+                color: '#e6f1ff',
+                maxTicksLimit: 5
+              },
+              title: {
+                display: true,
+                text: 'x',
+                color: '#e6f1ff'
+              }
+            },
+            y: {
+              grid: {
+                color: 'rgba(255, 255, 255, 0.1)'
+              },
+              ticks: {
+                color: '#e6f1ff'
+              },
+              title: {
+                display: true,
+                text: 'f(x)',
+                color: '#e6f1ff'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              labels: {
+                color: '#e6f1ff'
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

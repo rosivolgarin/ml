@@ -3,27 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Matemática Básica para Machine Learning</title>
-    <title>Manus AI e Rosi Volgarin</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Matemática para Machine Learning - Slides</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #0a192f 0%, #000000 100%);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #64ffda;
+        }
+        
+        .slide-link {
+            background-color: rgba(10, 25, 47, 0.7);
+            border-left: 4px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+        
+        .slide-link:hover {
+            transform: translateX(5px);
+            background-color: rgba(10, 25, 47, 0.9);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Curso de Matemática Básica para Machine Learning</h1>
-    </header>
-    <main id="content">
-        <!-- Conteúdo do Markdown convertido será inserido aqui -->
-    </main>
-    <footer>
-        <p>&copy; 2025 Manus AI | Rosi Volgarin. Todos os direitos reservados.</p>
-    </footer>
-    <script>
-        fetch("curso_matematica_ml_aprimorado.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("content").innerHTML = data;
-            });
-    </script>
+    <div class="max-w-4xl mx-auto">
+        <h1 class="title text-5xl mb-4 text-center">Matemática para Machine Learning</h1>
+        <p class="text-xl text-center mb-8 text-gray-300">Uma Jornada Essencial - Dos Fundamentos à Otimização</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="slide_titulo.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Slide de Título</h3>
+                <p class="text-gray-300">Apresentação do curso</p>
+            </a>
+            
+            <a href="slide_introducao.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Introdução</h3>
+                <p class="text-gray-300">Por que a matemática é crucial para ML</p>
+            </a>
+            
+            <a href="slide_modulo1.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Módulo 1</h3>
+                <p class="text-gray-300">Fundamentos de Aritmética e Álgebra</p>
+            </a>
+            
+            <a href="slide_modulo2.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Módulo 2</h3>
+                <p class="text-gray-300">Álgebra Linear</p>
+            </a>
+            
+            <a href="slide_modulo3.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Módulo 3</h3>
+                <p class="text-gray-300">Funções e Gráficos</p>
+            </a>
+            
+            <a href="slide_modulo4.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Módulo 4</h3>
+                <p class="text-gray-300">Cálculo Diferencial e Integral</p>
+            </a>
+            
+            <a href="slide_modulo5.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Módulo 5</h3>
+                <p class="text-gray-300">Probabilidade e Estatística</p>
+            </a>
+            
+            <a href="slide_modulo6.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Módulo 6</h3>
+                <p class="text-gray-300">Otimização e Introdução ao ML</p>
+            </a>
+            
+            <a href="slide_modulo7.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Módulo 7</h3>
+                <p class="text-gray-300">Projeto Final</p>
+            </a>
+            
+            <a href="slide_conclusao.html" class="slide-link p-4 rounded-lg block">
+                <h3 class="text-xl font-bold mb-2">Conclusão</h3>
+                <p class="text-gray-300">Próximos Passos</p>
+            </a>
+        </div>
+        
+        <div class="mt-8 text-center">
+            <p class="text-gray-400">Clique em qualquer slide para visualizá-lo</p>
+        </div>
+    </div>
 </body>
 </html>
 
