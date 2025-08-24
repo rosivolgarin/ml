@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <link rel="stylesheet" href="style_curso.css">
+  </head>
+  <body>
+    <div class="slide-container p-12 flex flex-col">
+      <!-- Cabeçalho -->
+      <div class="mb-8">
+        <h1 class="title text-4xl mb-2">Módulo 4 - Cálculo Diferencial e Integral</h1>
+        <div class="flex justify-end items-center space-x-6 text-gray-400">
+          <a href="index.html">Home</a>
+          <a href="index_slides.html">Índice</a>
+          <a href="slide_modulo3.html">Anterior</a>
+          <a href="slide_modulo5.html">Próximo</a>
+        </div>
+        <div class="w-24 h-1 bg-cyan-400"></div>
+      </div>
+      
+      <!-- Conteúdo principal em duas colunas -->
+      <div class="flex flex-1">
+        <!-- Coluna da esquerda: Tópicos -->
+        <div class="w-1/2 pr-8">
+          <div class="topic-card p-6 mb-6">
+            <h2 class="subtitle text-2xl mb-3">Derivadas e sua Interpretação</h2>
+            <p class="mb-2">• Taxa de variação instantânea de uma função</p>
+            <p class="mb-2">• Derivadas parciais para funções multivariáveis</p>
+            <p>• <span class="highlight">Aplicação em ML:</span> Sensibilidade do erro em relação aos parâmetros</p>
+          </div>
+          
+          <div class="topic-card p-6 mb-6">
+            <h2 class="subtitle text-2xl mb-3">Regra da Cadeia e Backpropagation</h2>
+            <p class="mb-2">• Derivação de funções compostas</p>
+            <p class="mb-2">• Propagação reversa de erros em redes neurais</p>
+            <p>• <span class="highlight">Aplicação em ML:</span> Treinamento eficiente de redes neurais profundas</p>
+          </div>
+          
+          <div class="topic-card p-6 mb-6">
+            <h2 class="subtitle text-2xl mb-3">Gradiente e Gradiente Descendente</h2>
+            <p class="mb-2">• Vetor de derivadas parciais</p>
+            <p class="mb-2">• Algoritmo de otimização iterativa</p>
+            <p>• <span class="highlight">Aplicação em ML:</span> Minimização de funções de custo</p>
+          </div>
+          
+          <div class="topic-card p-6">
+            <h2 class="subtitle text-2xl mb-3">Integrais e sua Aplicação</h2>
+            <p class="mb-2">• Integral definida e indefinida</p>
+            <p class="mb-2">• Integrais múltiplas</p>
+            <p>• <span class="highlight">Aplicação em ML:</span> Cálculo de probabilidades em distribuições contínuas</p>
+          </div>
+        </div>
+        
+        <!-- Coluna da direita: Visualização do Gradiente Descendente -->
+        <div class="w-1/2 flex flex-col items-center justify-center">
+          <div class="mb-6 w-full">
+            <h3 class="subtitle text-xl mb-4 text-center">Visualização do Gradiente Descendente</h3>
+            <img src="images/GraficoGradiente.png" alt="Visualização 3D do Gradiente Descendente" class="w-full rounded-lg shadow-lg">
+          </div>
+          
+          <div class="bg-opacity-20 bg-white p-4 rounded-lg w-full">
+            <h3 class="subtitle text-xl mb-3 text-center">Algoritmo do Gradiente Descendente</h3>
+            <div class="formula text-center">
+              <p class="mb-2">Atualização de parâmetros:</p>
+              <p class="text-xl">
+                <span class="text-yellow-400">θ</span>
+                <span class="text-white"> = </span>
+                <span class="text-yellow-400">θ</span>
+                <span class="text-white"> - </span>
+                <span class="text-cyan-400">α</span>
+                <span class="text-white"> ∇</span>
+                <span class="text-cyan-400">J</span>
+                <span class="text-white">(</span>
+                <span class="text-yellow-400">θ</span>
+                <span class="text-white">)</span>
+              </p>
+              <p class="mt-2 text-sm">
+                <span class="text-cyan-400">α</span>: taxa de aprendizado, 
+                <span class="text-cyan-400">J</span>: função de custo, 
+                <span class="text-yellow-400">θ</span>: parâmetros
+              </p>
+            </div>
+          </div>
+          
+          <!-- Exemplo de aplicação prática -->
+          <div class="mt-6 bg-opacity-10 bg-white p-4 rounded-lg w-full">
+            <p class="text-center text-sm">
+              O gradiente descendente é fundamental para o treinamento de modelos de ML, 
+              permitindo encontrar os parâmetros ótimos que minimizam o erro de previsão.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Rodapé com indicador de página -->
+      <div class="mt-8 flex justify-end">
+        <div class="flex items-center space-x-2">
+          <div class="w-3 h-3 rounded-full bg-cyan-400"></div>
+          <span class="text-sm text-gray-400">5/10</span>
+        </div>
+      </div>
+      <footer>
+          <p>&copy; 2025 Manus AI | Rosi Volgarin. Aprenda e compartilhe.</p>
+      </footer> 
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <link rel="stylesheet" href="style_curso.css">
+  </head>
+  <body>
+    <div class="slide-container p-12 flex flex-col">
+      <!-- Cabeçalho -->
+      <div class="mb-8">
+        <h1 class="title text-4xl mb-2">Módulo 6 - Otimização e Introdução ao ML</h1>
+        <div class="flex justify-end items-center space-x-6 text-gray-400">
+          <a href="index.html">Home</a>
+          <a href="index_slides.html">Índice</a>
+          <a href="slide_modulo5.html">Anterior</a>
+          <a href="slide_modulo7.html">Próximo</a>
+        </div>
+        <div class="w-24 h-1 bg-cyan-400"></div>
+      </div>
+      
+      <!-- Conteúdo principal em duas colunas -->
+      <div class="flex flex-1">
+        <!-- Coluna da esquerda: Tópicos -->
+        <div class="w-1/2 pr-8">
+          <div class="topic-card p-6 mb-6">
+            <h2 class="subtitle text-2xl mb-3">Funções de Custo e Regularização</h2>
+            <p class="mb-2">• Erro Quadrático Médio (MSE) para regressão</p>
+            <p class="mb-2">• Entropia Cruzada para classificação</p>
+            <p>• <span class="highlight">Regularização L1 e L2</span> para evitar overfitting</p>
+          </div>
+          
+          <div class="topic-card p-6 mb-6">
+            <h2 class="subtitle text-2xl mb-3">Tipos de Gradiente Descendente</h2>
+            <p class="mb-2">• Batch Gradient Descent: usa todos os dados</p>
+            <p class="mb-2">• Stochastic Gradient Descent (SGD): uma amostra por vez</p>
+            <p>• Mini-Batch: compromisso entre velocidade e estabilidade</p>
+          </div>
+          
+          <div class="topic-card p-6">
+            <h2 class="subtitle text-2xl mb-3">Overfitting e Underfitting</h2>
+            <p class="mb-2">• Underfitting: modelo muito simples, alto viés</p>
+            <p class="mb-2">• Overfitting: modelo muito complexo, alta variância</p>
+            <p>• <span class="highlight">Equilíbrio</span> entre complexidade e generalização</p>
+          </div>
+        </div>
+        
+        <!-- Coluna da direita: Visualização de Overfitting/Underfitting -->
+        <div class="w-1/2 flex flex-col items-center justify-center">
+          <div class="w-full mb-6">
+            <img src="images/GraficoMetricas.png" alt="Ilustração de Underfitting, Fitting Adequado e Overfitting" class="w-full rounded-lg shadow-lg">
+          </div>
+          
+          <div class="bg-opacity-20 bg-white p-4 rounded-lg w-full mb-6">
+              <p class="text-l mb-3 text-justify"><strong>Under-fitting (Grau 1):</strong> A linha laranja é quase linear, não captura a oscilação dos dados.</p>
+              <p class="text-l mb-3 text-justify"><strong>(Grau 3):</strong> A curva acompanha bem o padrão geral dos pontos, sem exagerar.</p>
+              <p class="text-l mb-3 text-justify"><strong>Over-fitting (Grau 10):</strong> A curva apresenta oscilações extremas, tentando passar por quase todos os pontos — típico overfitting.</p>
+          </div>
+
+          <div class="w-full">
+            <img src="images/GraficoGradientes.png" alt="gráfico mostrando os três tipos de Gradiente Descendente" class="rounded-lg shadow-lg">
+          </div>
+
+          <div class="bg-opacity-20 bg-white p-4 rounded-lg w-full mb-6 mt-4">
+              <p class="text-l mb-3 text-justify"><strong>Batch Gradient Descent (azul):</strong> convergência suave e estável, mas mais lenta (usa todo o dataset a cada passo).</p>
+              <p class="text-l mb-3 text-justify"><strong>Stochastic Gradient Descent (SGD) (laranja):</strong> convergência mais rápida inicialmente, mas com alta oscilação (usa uma amostra por vez).</p>
+              <p class="text-l mb-3 text-justify"><strong>Mini-Batch Gradient Descent (verde):</strong> equilíbrio entre estabilidade e velocidade (usa pequenos lotes).</p>
+          </div>
+          
+          <div class="mt-6 bg-opacity-20 bg-white p-4 rounded-lg w-full">
+            <h3 class="subtitle text-xl mb-2 text-center">Equilíbrio entre Bias e Variância</h3>
+            <p class="text-center">O modelo ideal equilibra a complexidade para evitar tanto o underfitting quanto o overfitting, minimizando o erro total.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Rodapé com indicador de página -->
+      <div class="mt-8 flex justify-end">
+        <div class="flex items-center space-x-2">
+          <div class="w-3 h-3 rounded-full bg-cyan-400"></div>
+          <span class="text-sm text-gray-400">7/10</span>
+        </div>
+      </div>
+      <footer>
+          <p>&copy; 2025 Manus AI | Rosi Volgarin. Aprenda e compartilhe.</p>
+      </footer> 
+    </div>
+  </body>
+</html>
+
